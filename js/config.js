@@ -10,7 +10,7 @@ window.APP_CONFIG = {
   downloadUrl: '',
 
   version: '1.0.0',
-  fileName: 'Nezer Visuals Launcher Setup 1.0.0.zip',
+  fileName: 'Nezer Visuals Launcher Setup 1.0.0.exe',
   size: '~100 МБ',
   platform: 'Windows 10/11',
 
