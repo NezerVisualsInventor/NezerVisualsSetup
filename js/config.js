@@ -1,18 +1,19 @@
 // ============================================================
 //  НАСТРОЙКИ САЙТА NEZER VISUALS
 // ============================================================
-//  ⚠️  ВСТАВЬ СЮДА ССЫЛКУ НА СКАЧИВАНИЕ ЛАУНЧЕРА
-//      (прямую ссылку на ZIP-архив с установщиком).
-//      Пока ссылка пустая, кнопка «Скачать» покажет
-//      уведомление «Ссылка скоро появится».
+//  ССЫЛКА НА СКАЧИВАНИЕ — с GitHub.
+//  Ссылка ведёт на asset «Nezer Visuals Launcher Setup 1.0.0.zip»
+//  в релизе MinecraftVersion. Загрузи ZIP-файл с точно таким
+//  именем на страницу релиза:
+//  https://github.com/GamesLoxotron/NezerVisuals/releases
 // ============================================================
 window.APP_CONFIG = {
-  downloadUrl: '',
+  downloadUrl: 'https://github.com/GamesLoxotron/NezerVisualsSetup/releases/download/NezerVisualSetup/Nezer.Visuals.Launcher.Setup.1.0.0.exe',
 
   version: '1.0.0',
-  fileName: 'Nezer Visuals Launcher Setup 1.0.0.exe',
-  size: '~100 МБ',
+  fileName: 'Nezer.Visuals.Launcher.Setup.1.0.0.exe',
+  size: '~99 МБ',
   platform: 'Windows 10/11',
 
-  githubUrl: 'https://github.com/GamesLoxotron/NezerVisualsSetup/releases/tag/NezerVisualSetup',
+  githubUrl: 'https://github.com/GamesLoxotron/NezerVisualsSetup',
 };
