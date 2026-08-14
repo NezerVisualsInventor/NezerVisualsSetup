@@ -14,5 +14,5 @@ window.APP_CONFIG = {
   size: '~100 МБ',
   platform: 'Windows 10/11',
 
-  githubUrl: 'https://github.com/GamesLoxotron/NezerVisuals',
+  githubUrl: 'https://github.com/GamesLoxotron/NezerVisualsSetup/releases/tag/NezerVisualSetup',
 };
