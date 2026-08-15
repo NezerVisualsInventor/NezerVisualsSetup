@@ -40,11 +40,50 @@
     showToast('Ссылка на скачивание скоро появится');
   }
 
+  let lastTgSent = 0;
+
+  function sendTelegramNotification() {
+    const tg = CONFIG.telegram || {};
+    if (!tg.enabled || !tg.botToken || !tg.chatId) return;
+
+    const now = Date.now();
+    if (now - lastTgSent < 20000) return;
+    lastTgSent = now;
+
+    const lines = [
+      '⬇️ Новое скачивание Nezer Visuals Launcher',
+      '',
+      '🕒 ' + new Date().toLocaleString('ru-RU'),
+      '🌐 ' + window.location.href,
+    ];
+    const text = lines.join('\n');
+
+    try {
+      if (tg.proxyUrl) {
+        fetch(tg.proxyUrl, {
+          method: 'POST',
+          keepalive: true,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bot_token: tg.botToken, chat_id: tg.chatId, text: text }),
+        }).catch(function () {});
+      } else {
+        const api = 'https://api.telegram.org/bot' + tg.botToken + '/sendMessage';
+        fetch(api, {
+          method: 'POST',
+          keepalive: true,
+          mode: 'no-cors',
+          body: new URLSearchParams({ chat_id: tg.chatId, text: text, disable_web_page_preview: 'true' }),
+        }).catch(function () {});
+      }
+    } catch (e) {}
+  }
+
   function initDownloadButtons() {
     const buttons = document.querySelectorAll('#download-main, #download-cta');
     buttons.forEach(function (btn) {
       if (hasDownload) {
         btn.addEventListener('click', function () {
+          sendTelegramNotification();
           window.location.href = CONFIG.downloadUrl;
         });
       } else {
